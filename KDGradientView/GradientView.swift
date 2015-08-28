@@ -20,7 +20,7 @@ class GradientView: UIView {
     
     var index: Int = 0
     
-    var factor: CGFloat = 1.0
+    
     
     
     lazy var displayLink : CADisplayLink = {
@@ -35,24 +35,37 @@ class GradientView: UIView {
         
         index = (index + 1) % colors.count
         
-        self.setNeedsDisplay()
-        
-        self.factor = 0.0
+        lastTimestamp = 0.0
+        factor = 0.0
         
         self.displayLink.paused = false
         
         
     }
     
-    var frameTimestamp : Double = 0.0
+    var lastTimestamp : CGFloat = 0.0
+    var factor: CGFloat = 1.0
     
     func screenUpdated(displayLink : CADisplayLink) {
-        let currentTime = self.displayLink.timestamp
-        let renderTime = currentTime - frameTimestamp;
+        
+        let currentTime : CGFloat = CGFloat(self.displayLink.timestamp)
+        
+        if(lastTimestamp == 0.0) {
+            lastTimestamp = currentTime
+            return
+        }
+        
+        let renderTime : CGFloat = currentTime - lastTimestamp;
+        
+        lastTimestamp = currentTime;
+        
+        println("Render Time: \(renderTime)")
         
         self.factor += 0.02
         
         if(self.factor > 1.0) {
+            
+            
             self.displayLink.paused = true
         }
         
