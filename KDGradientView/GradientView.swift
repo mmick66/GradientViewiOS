@@ -20,9 +20,6 @@ class GradientView: UIView {
     
     var index: Int = 0
     
-    
-    
-    
     lazy var displayLink : CADisplayLink = {
         let displayLink : CADisplayLink = CADisplayLink(target: self, selector: "screenUpdated:")
         displayLink.addToRunLoop(NSRunLoop.mainRunLoop(), forMode: NSRunLoopCommonModes)
@@ -35,7 +32,6 @@ class GradientView: UIView {
         
         index = (index + 1) % colors.count
         
-        lastTimestamp = 0.0
         factor = 0.0
         
         self.displayLink.paused = false
@@ -43,25 +39,11 @@ class GradientView: UIView {
         
     }
     
-    var lastTimestamp : CGFloat = 0.0
     var factor: CGFloat = 1.0
     
     func screenUpdated(displayLink : CADisplayLink) {
         
-        let currentTime : CGFloat = CGFloat(self.displayLink.timestamp)
-        
-        if(lastTimestamp == 0.0) {
-            lastTimestamp = currentTime
-            return
-        }
-        
-        let renderTime : CGFloat = currentTime - lastTimestamp;
-        
-        lastTimestamp = currentTime;
-        
-        println("Render Time: \(renderTime)")
-        
-        self.factor += 0.02
+        self.factor += CGFloat(displayLink.duration)
         
         if(self.factor > 1.0) {
             
