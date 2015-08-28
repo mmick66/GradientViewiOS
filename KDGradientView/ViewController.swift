@@ -10,15 +10,30 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet var gradientView: GradientView!
+    
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        // borrow from standard color wheel https://en.wikipedia.org/wiki/Color_wheel
+        
+        gradientView.colors = [
+            UIColor.blueColor(),
+            UIColor.cyanColor(),
+            UIColor.greenColor(),
+            UIColor.yellowColor(),
+            UIColor.redColor(),
+            UIColor.magentaColor()
+        ];
+    }
+    
+    @IBAction func next(sender: UIButton) {
+        
+        gradientView.animateToNextGradient()
+        
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 
 
 }

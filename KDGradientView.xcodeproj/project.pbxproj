@@ -13,6 +13,7 @@
 		BE38D2D51B909E8700F052A2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE38D2D41B909E8700F052A2 /* Images.xcassets */; };
 		BE38D2D81B909E8700F052A2 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE38D2D61B909E8700F052A2 /* LaunchScreen.xib */; };
 		BE38D2E41B909E8800F052A2 /* KDGradientViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE38D2E31B909E8800F052A2 /* KDGradientViewTests.swift */; };
+		BE38D2EE1B909EB100F052A2 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE38D2ED1B909EB100F052A2 /* GradientView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		BE38D2DD1B909E8800F052A2 /* KDGradientViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KDGradientViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE38D2E21B909E8800F052A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE38D2E31B909E8800F052A2 /* KDGradientViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KDGradientViewTests.swift; sourceTree = "<group>"; };
+		BE38D2ED1B909EB100F052A2 /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			children = (
 				BE38D2CD1B909E8700F052A2 /* AppDelegate.swift */,
 				BE38D2CF1B909E8700F052A2 /* ViewController.swift */,
+				BE38D2ED1B909EB100F052A2 /* GradientView.swift */,
 				BE38D2D11B909E8700F052A2 /* Main.storyboard */,
 				BE38D2D41B909E8700F052A2 /* Images.xcassets */,
 				BE38D2D61B909E8700F052A2 /* LaunchScreen.xib */,
@@ -214,6 +217,7 @@
 			files = (
 				BE38D2D01B909E8700F052A2 /* ViewController.swift in Sources */,
 				BE38D2CE1B909E8700F052A2 /* AppDelegate.swift in Sources */,
+				BE38D2EE1B909EB100F052A2 /* GradientView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
