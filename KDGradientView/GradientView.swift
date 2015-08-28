@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class GradientView: UIView {
 
     var lastElementIndex: Int = 0
@@ -21,7 +22,14 @@ class GradientView: UIView {
     
     var factor: CGFloat = 1.0
     
-    var timer: NSTimer?
+    
+    lazy var displayLink : CADisplayLink = {
+        let displayLink : CADisplayLink = CADisplayLink(target: self, selector: "screenUpdated:")
+        displayLink.addToRunLoop(NSRunLoop.mainRunLoop(), forMode: NSRunLoopCommonModes)
+        displayLink.paused = true
+        return displayLink
+    }()
+    
     
     func animateToNextGradient() {
         
@@ -31,22 +39,27 @@ class GradientView: UIView {
         
         self.factor = 0.0
         
-        self.timer = NSTimer.scheduledTimerWithTimeInterval(1.0/60.0, target: self, selector: "animate:", userInfo: nil, repeats: true)
+        self.displayLink.paused = false
+        
         
     }
     
+    var frameTimestamp : Double = 0.0
     
-    func animate(timer: NSTimer) {
+    func screenUpdated(displayLink : CADisplayLink) {
+        let currentTime = self.displayLink.timestamp
+        let renderTime = currentTime - frameTimestamp;
         
         self.factor += 0.02
         
         if(self.factor > 1.0) {
-            self.timer?.invalidate()
+            self.displayLink.paused = true
         }
         
         self.setNeedsDisplay()
-        
     }
+    
+    
     
     override func drawRect(rect: CGRect) {
         
