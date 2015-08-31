@@ -20,11 +20,11 @@ class ViewController: UIViewController {
         
         gradientView.colors = [
             UIColor.blueColor(),
-            UIColor.cyanColor(),
+            // UIColor.cyanColor(),
             UIColor.greenColor(),
-            UIColor.yellowColor(),
+            // UIColor.yellowColor(),
             UIColor.redColor(),
-            UIColor.magentaColor()
+            // UIColor.magentaColor()
         ];
     }
     

@@ -80,8 +80,8 @@
 			isa = PBXGroup;
 			children = (
 				BE38D2CD1B909E8700F052A2 /* AppDelegate.swift */,
-				BE38D2CF1B909E8700F052A2 /* ViewController.swift */,
 				BE38D2ED1B909EB100F052A2 /* GradientView.swift */,
+				BE38D2CF1B909E8700F052A2 /* ViewController.swift */,
 				BE38D2D11B909E8700F052A2 /* Main.storyboard */,
 				BE38D2D41B909E8700F052A2 /* Images.xcassets */,
 				BE38D2D61B909E8700F052A2 /* LaunchScreen.xib */,
@@ -413,6 +413,7 @@
 				BE38D2E91B909E8800F052A2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BE38D2EA1B909E8800F052A2 /* Build configuration list for PBXNativeTarget "KDGradientViewTests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +422,7 @@
 				BE38D2EC1B909E8800F052A2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
